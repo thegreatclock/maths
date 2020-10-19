@@ -1,0 +1,19 @@
+{
+  "displayName": "Maths",
+  "name": "com.greatclock.maths",
+  "version": "1.0.0",
+  "unity": "2018.4",
+  "description": "Maths support for game development and other tools.",
+  "type": "library",
+  "keywords": [
+    "maths"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thegreatclock/maths.git"
+  },
+  "author": {
+    "name": "greatclock",
+    "email": "thegreatclock@hotmail.com"
+  }
+}
