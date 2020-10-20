@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Net.Http.Headers;
 
 namespace GreatClock.Common.Maths {
 
@@ -63,6 +64,26 @@ namespace GreatClock.Common.Maths {
 		public ReversePolish SetStatement(string statement) {
 			Init(statement);
 			return this;
+		}
+
+		/// <summary>
+		/// Get all the variables in the statement
+		/// </summary>
+		/// <param name="variables">list to write variables</param>
+		/// <returns>count of all variables</returns>
+		public int GetVariables(List<string> variables) {
+			if (variables == null) { return 0; }
+			int from = variables.Count;
+			int ret = 0;
+			for (int i = 0, imax = mItems.Count; i < imax; i++) {
+				_Item item = mItems[i];
+				if (item.type != eItemType.Variable) { continue; }
+				string variable = item.variable;
+				if (variables.IndexOf(variable, from) >= from) { continue; }
+				variables.Add(variable);
+				ret++;
+			}
+			return ret;
 		}
 
 		/// <summary>
